@@ -7,6 +7,7 @@ import mainModule from './modules/main';
 import postsModule from './modules/posts';
 import commentsModule from './modules/comments';
 import moduleTemplate from './modules/_module_template'
+import audioTestModule from './modules/audio_test'
 
 // import bootstrap.js plugin
 import 'bootstrap-sass';
@@ -21,4 +22,5 @@ app.loadModule( mainModule );
 app.loadModule( postsModule );
 app.loadModule( commentsModule );
 app.loadModule( moduleTemplate );
+app.loadModule( audioTestModule );
 app.init();
