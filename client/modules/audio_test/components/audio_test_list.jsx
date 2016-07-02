@@ -2,16 +2,7 @@ import React from 'react'
 import { AccountNotLoggedIn, AppLoading } from '/client/configs/components'
 
 class AudioTestList extends React.Component {
-
   displayUser() {
-
-    // const { foobars } = this.props
-
-    // const foobarNodes = foobars.map( foobar => (
-    //     <li key={ foobar._id }>{ foobar.name }</li>
-    //   )
-    // )
-
     return (
       <div>
         <h3>Audio Test List</h3>
@@ -22,31 +13,24 @@ class AudioTestList extends React.Component {
       </div>
     )
   }
-
   displayGuest() {
     return (
       <AccountNotLoggedIn />
     )
   }
-
   displayLoading() {
     return (
       <AppLoading />
     )
   }
-
   render() {
-
     const { loggedIn, loggingIn } = this.props
-
     if ( loggingIn ) { return this.displayLoading() }
-
     return (
       <div>
       { loggedIn ? this.displayUser() : this.displayGuest() }
       </div>
     )
-
   }
 }
 

@@ -3,19 +3,19 @@ import { mount } from 'react-mounter';
 
 // Define a layout from the shared components
 import {
-  ListLayout,
+  LayoutList,
 } from '/client/configs/components.js';
 
 import AudioTestList from './containers/audio_test_list';
 
 export default function ( injectDeps, { FlowRouter } ) {
 
-  const ListLayoutCtx = injectDeps( ListLayout );
+  const LayoutListCtx = injectDeps( LayoutList );
 
   FlowRouter.route('/audio', {
     name: 'audio.list',
     action() {
-      mount( ListLayoutCtx, {
+      mount( LayoutListCtx, {
         content: () => ( <AudioTestList /> )
       });
     }
