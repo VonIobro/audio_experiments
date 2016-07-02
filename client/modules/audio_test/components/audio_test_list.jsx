@@ -1,16 +1,26 @@
 import React from 'react'
 import { AccountNotLoggedIn, AppLoading } from '/client/configs/components'
+import {
+  Accordion,
+  PageHeader,
+  Panel,
+  Row,
+} from 'react-bootstrap'
 
 class AudioTestList extends React.Component {
+  constructor( props ) {
+    super( props )
+    this.state = {
+      audiotest1: '',
+    }
+  }
   displayUser() {
     return (
-      <div>
-        <h3>Audio Test List</h3>
-        <ul>
-          <li>Test 1</li>
-          <li>Test 2</li>
-        </ul>
-      </div>
+      <Accordion>
+        <Panel header="Test 1" eventKey="1">Content and what not</Panel>
+        <Panel header="Test 2" eventKey="2">Content and what not</Panel>
+        <Panel header="Test 3" eventKey="3">Content and what not</Panel>
+      </Accordion>
     )
   }
   displayGuest() {
@@ -26,11 +36,11 @@ class AudioTestList extends React.Component {
   render() {
     const { loggedIn, loggingIn } = this.props
     if ( loggingIn ) { return this.displayLoading() }
-    return (
-      <div>
-      { loggedIn ? this.displayUser() : this.displayGuest() }
-      </div>
-    )
+    if ( loggedIn ) {
+      return this.displayUser()
+    } else {
+      return this.displayGuest()
+    }
   }
 }
 
