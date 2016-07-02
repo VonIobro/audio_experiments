@@ -1,17 +1,21 @@
-import MainLayout from '/client/modules/app/layouts/main_layout'
-import ListLayout from '/client/modules/app/layouts/list_layout'
-import SplitLayout from '/client/modules/app/layouts/split_layout'
-import AccountNotLoggedIn from '/client/modules/app/components/account_not_logged_in'
-import AppNotFound from '/client/modules/app/components/app_not_found'
-import AppErrorMsg from '/client/modules/app/components/app_error_msg'
-import AppLoading from '/client/modules/app/components/app_loading'
+import NavbarMain from '/client/modules/core/containers/navbar_main'
+import Footer from '/client/modules/core/components/footer'
+import LayoutList from '/client/modules/core/containers/layout_list'
+import LayoutSplit from '/client/modules/core/containers/layout_split'
+import AccountNotLoggedIn from '/client/modules/core/components/account_not_logged_in'
+import AppNotFound from '/client/modules/core/components/app_not_found'
+import AppErrorMsg from '/client/modules/core/components/app_error_msg'
+import AppVerifiedMsg from '/client/modules/core/containers/app_verified_msg'
+import AppLoading from '/client/modules/core/components/app_loading'
 
 export {
-  MainLayout,
-  ListLayout,
-  SplitLayout,
+  NavbarMain,
+  Footer,
+  LayoutList,
+  LayoutSplit,
   AccountNotLoggedIn,
   AppNotFound,
   AppErrorMsg,
   AppLoading,
+  AppVerifiedMsg,
 }

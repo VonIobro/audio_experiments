@@ -1,21 +1,19 @@
 import { useDeps, composeWithTracker, composeAll } from 'mantra-core'
-import Component from '../components/post_create'
+import Component from '../components/account_preferences'
 import { authComposer } from 'meteor-auth'
 
-export const composer = ( { context, clearErrors }, onData ) => {
+export const composer = ( { context }, onData ) => {
 
   const { LocalState, Users } = context()
-  const errorState = 'POSTS_CREATE_ERROR'
-  const error = LocalState.get( errorState )
+  const { email, username } = Users()
 
-  onData( null, { error, Users } )
+  onData( null, { email, username } )
 
-  return clearErrors.bind( errorState )
 }
 
 export const depsMapper = ( context, actions ) => ({
-  create: actions.posts.create,
-  clearErrors: actions.posts.clearErrors,
+  deleteAccount: actions.accounts.deleteAccount,
+  clearErrors: actions.accounts.clearErrors,
   context: () => context,
 })
 

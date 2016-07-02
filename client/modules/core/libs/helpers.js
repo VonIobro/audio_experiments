@@ -1,3 +1,4 @@
+// component helper
 export function isActiveRoute( compareRoute ) {
 
   let currentRoute = FlowRouter.getRouteName()
@@ -13,7 +14,7 @@ export function isActiveRoute( compareRoute ) {
   } else {
 
     return '';
-    
+
   }
 
 }

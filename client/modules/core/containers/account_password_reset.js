@@ -1,11 +1,11 @@
 import { useDeps, composeWithTracker, composeAll } from 'mantra-core'
-import Component from '../components/account_login'
+import Component from '../components/account_password_reset'
 import { authComposer } from 'meteor-auth'
 
 export const composer = ( { context, clearErrors }, onData ) => {
 
   const { LocalState } = context()
-  const errorState = 'LOGIN_ERROR'
+  const errorState = 'RESET_PASSWORD_ERROR'
   const error = LocalState.get( errorState )
 
   onData( null, { error } )
@@ -14,7 +14,7 @@ export const composer = ( { context, clearErrors }, onData ) => {
 }
 
 export const depsMapper = ( context, actions ) => ({
-  login: actions.accounts.login,
+  resetPassword: actions.accounts.resetPassword,
   clearErrors: actions.accounts.clearErrors,
   context: () => context,
 })

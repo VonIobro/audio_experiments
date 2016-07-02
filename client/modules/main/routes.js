@@ -1,25 +1,23 @@
-import React from 'react';
-import { mount } from 'react-mounter';
+import React from 'react'
+import { mount } from 'react-mounter'
+import LayoutMain from './containers/layout_main'
+import JumboGuest from './components/jumbo_guest'
+import SummaryGuest from './components/summary_guest'
 
-import {
-  MainLayout,
-} from '/client/configs/components.js';
-
-import MainPage from './containers/main_page';
 
 export default function ( injectDeps, { FlowRouter } ) {
 
-  const MainLayoutCtx = injectDeps( MainLayout );
+  const LayoutMainCtx = injectDeps( LayoutMain )
 
   // Introduction to website
   FlowRouter.route( '/', {
     name: "main",
     action() {
-      mount( MainLayoutCtx, {
-        // header: <Navbar activeLink="main" />,
-        content: () => ( <MainPage /> ),
-      });
+      mount( LayoutMainCtx, {
+        jumbotron: () => ( <JumboGuest /> ),
+        content: () => ( <SummaryGuest /> ),
+      })
     }
-  });
+  })
 
 }
