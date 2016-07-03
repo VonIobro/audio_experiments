@@ -1,8 +1,9 @@
 import React from 'react'
 import { AccountNotLoggedIn, AppLoading } from '/client/configs/components'
 import {
-  Accordion,
+  ListGroup,
   PageHeader,
+  PanelGroup,
   Panel,
   Row,
 } from 'react-bootstrap'
@@ -16,11 +17,15 @@ class AudioTestList extends React.Component {
   }
   displayUser() {
     return (
-      <Accordion>
-        <Panel header="Test 1" eventKey="1">Content and what not</Panel>
-        <Panel header="Test 2" eventKey="2">Content and what not</Panel>
-        <Panel header="Test 3" eventKey="3">Content and what not</Panel>
-      </Accordion>
+      <PanelGroup>
+        <Panel header="MediaRecorder">
+          <ul>
+            <li>Audio recording in Firefox (?) and Chrome 49</li>
+            <li>Can only be used from HTTPS or localhost</li>
+          </ul>
+        </Panel>
+        <Panel header="Test 2" >Content and what not</Panel>
+      </PanelGroup>
     )
   }
   displayGuest() {
